@@ -49,7 +49,7 @@ export default function NuevaAlarma() {
             width={"25px"}
             height={"25px"}
             onClick={() => {
-              navigate(urls.grupo);
+              navigate(urls.misAlarmas);
             }}
           ></img>
         </Stack>
