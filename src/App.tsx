@@ -8,6 +8,7 @@ import Grupo from "./components/Grupo";
 import HoraDeLevantarse from "./components/HoraDeLevantarse";
 import MisAlarmas from "./components/MisAlarmas";
 import NuevoGrupo from "./components/NuevoGrupo";
+import NuevaAlarma from "./components/NuevaAlarma";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             />
             <Route path={urls.grupo} element={<Grupo />} />
             <Route path={urls.nuevoGrupo} element={<NuevoGrupo />} />
+            <Route path={urls.nuevaAlarma} element={<NuevaAlarma />} />
           </Routes>
           <Footer />
         </BrowserRouter>
