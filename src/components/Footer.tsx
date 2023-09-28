@@ -1,4 +1,7 @@
 import { Stack, Typography } from "@mui/material";
+import { urls } from "../urls";
+import { useNavigate } from "react-router-dom";
+
 
 const stackStyle = {
   alignItems: "center",
@@ -16,6 +19,7 @@ const stackStyle2 = {
 };
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <Stack
       flexDirection={"row"}
@@ -24,13 +28,17 @@ export default function Footer() {
       sx={stackStyle}
     >
       <Stack direction={"row"} mx={10}>
-        <Typography variant="h4" fontWeight={300}>
+        <Typography variant="h4" fontWeight={300} onClick={() => {
+          navigate(urls.home);
+        }}>
           AlarmMinder
         </Typography>
       </Stack>
       <Stack direction={"row"} color={"white"} sx={stackStyle2} mx={30}>
         <Typography variant="h6">Mobile app</Typography>
-        <Typography variant="h6">Community</Typography>
+        <Typography variant="h6" onClick={() => {
+          navigate(urls.home);
+        }}>Community</Typography>
         <Typography variant="h6">Company</Typography>
       </Stack>
     </Stack>

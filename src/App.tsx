@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <Stack>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route path={urls.home} element={<Comunidad />} />
             <Route path={urls.misAlarmas} element={<MisAlarmas />} />

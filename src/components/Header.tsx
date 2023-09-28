@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router-dom";
+import { urls } from "../urls";
 
 const boxStyle = {
   justifyContent: "space-around",
@@ -46,15 +48,24 @@ const SearchBar = () => (
 );
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
-    <Box display={"flex"} flexDirection={"row"} sx={boxStyle}>
-      <Typography variant="h4" fontWeight={300}>
+    <Box display={"flex"} flexDirection={"row"} sx={boxStyle} >
+      <Typography variant="h4" fontWeight={300} onClick={() => {
+        navigate(urls.home);
+      }}>
         AlarmMinder
       </Typography>
       <Box display={"flex"} flexDirection={"row"} sx={boxStyle2}>
-        <Typography variant="h6">Home</Typography>
-        <Typography variant="h6">Mis Alarmas</Typography>
-        <Typography variant="h6">Comunidad</Typography>
+        <Typography variant="h6" onClick={() => {
+          navigate(urls.home);
+        }}>Home</Typography>
+        <Typography variant="h6" onClick={() => {
+          navigate(urls.misAlarmas);
+        }}>Mis Alarmas</Typography>
+        <Typography variant="h6" onClick={() => {
+          navigate(urls.home);
+        }}>Comunidad</Typography>
       </Box>
       <SearchBar />
     </Box>
